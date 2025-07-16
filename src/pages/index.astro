@@ -1,16 +1,30 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+  <div class="flex min-h-screen flex-col items-center justify-center gap-4">
+    <h1 class="animate-bounce text-5xl font-bold text-green-500">GamBlick</h1>
+    <p class="mt-4 text-xl">Simple Web Game Collection</p>
+
+    <button
+      id="test-button"
+      class="inline-flex h-11 items-center justify-center whitespace-nowrap rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground ring-offset-background transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+    >
+      Plain HTML Button
+    </button>
+  </div>
+</BaseLayout>
+
+<script>
+  const button = document.getElementById("test-button");
+
+  // button이 null이 아닐 경우에만 이벤트 리스너를 추가합니다.
+  if (button) {
+    button.addEventListener("click", () => {
+      alert("Plain JavaScript Click Works!");
+    });
+  }
+
+  console.log("Astro page script loaded and event listener attached.");
+</script>

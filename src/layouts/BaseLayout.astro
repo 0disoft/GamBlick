@@ -1,0 +1,18 @@
+---
+// astro.config.mjs의 injectReset: true 옵션이 CSS 리셋을 처리하므로
+// 여기서는 별도의 리셋 CSS를 import할 필요가 없습니다.
+---
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="A simple collection of web games" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>GamBlick</title>
+  </head>
+  <body class="font-sans">
+    <slot />
+  </body>
+</html>

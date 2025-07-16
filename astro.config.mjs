@@ -1,10 +1,13 @@
-// @ts-check
-import UnoCSS from '@unocss/astro'; // 1. UnoCSS를 import 합니다.
+import svelte from "@astrojs/svelte";
+import uno from "@unocss/astro";
 import { defineConfig } from 'astro/config';
 
-// https://astro.build/config
 export default defineConfig({
   integrations: [
-    UnoCSS(), // 2. integrations 배열에 추가합니다.
-  ],
+    uno({
+      // presetWind4에 내장되어 있으므로 별도 패키지 설치 없이 사용 가능
+      injectReset: true,
+    }),
+    svelte()
+  ]
 });
