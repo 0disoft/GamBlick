@@ -14,11 +14,13 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@astrojs/db": "^0.15.0",
     "@astrojs/svelte": "^7.1.0",
     "astro": "^5.11.2",
     "class-variance-authority": "^0.7.1"
   },
   "devDependencies": {
+    "@types/bun": "^1.2.18",
     "@unocss/astro": "^66.3.3",
     "@unocss/preset-attributify": "^66.3.3",
     "@unocss/preset-icons": "^66.3.3",

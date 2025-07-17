@@ -8,6 +8,33 @@
       ]
     },
     "jsx": "react-jsx",
-    "jsxImportSource": "svelte-jsx"
-  }
+    "jsxImportSource": "svelte-jsx",
+    "lib": [
+      "dom",
+      "esnext"
+    ],
+    "types": [
+      "bun-types",
+      "@astrojs/db"
+    ],
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "isolatedModules": true,
+    "moduleResolution": "bundler",
+    "module": "esnext",
+    "target": "esnext",
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true,
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.astro",
+    "src/**/*.svelte"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

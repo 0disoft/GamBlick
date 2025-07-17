@@ -1,6 +1,7 @@
 import svelte from "@astrojs/svelte";
 import uno from "@unocss/astro";
 import { defineConfig } from 'astro/config';
+import db from "@astrojs/db";
 
 export default defineConfig({
   integrations: [
@@ -14,6 +15,7 @@ export default defineConfig({
         },
       },
     }),
-    svelte()
+    svelte(),
+    db()
   ]
 });
