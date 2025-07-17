@@ -1,0 +1,1188 @@
+<html lang="en"><head><meta charset="UTF-8"><meta name="description" content="Astro description"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v5.11.2"><title>Welcome to GamBlick</title><style data-vite-dev-id="C:/Users/zerodi/Documents/workspace/GamBlick/node_modules/@unocss/reset/tailwind.css">/*
+1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+2. [UnoCSS]: allow to override the default border color with css var `--un-default-border-color`
+*/
+
+*,
+::before,
+::after {
+  box-sizing: border-box; /* 1 */
+  border-width: 0; /* 2 */
+  border-style: solid; /* 2 */
+  border-color: var(--un-default-border-color, #e5e7eb); /* 2 */
+}
+
+::before,
+::after {
+  --un-content: '';
+}
+
+/*
+1. Use a consistent sensible line-height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+3. Use a more readable tab size.
+4. Use the user's configured `sans` font-family by default.
+5. Use the user's configured `sans` font-feature-settings by default.
+6. Use the user's configured `sans` font-variation-settings by default.
+7. Disable tap highlights on iOS.
+*/
+
+html,
+:host {
+  line-height: 1.5; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+  -moz-tab-size: 4; /* 3 */
+  tab-size: 4; /* 3 */
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 4 */
+  font-feature-settings: normal; /* 5 */
+  font-variation-settings: normal; /* 6 */
+  -webkit-tap-highlight-color: transparent; /* 7 */
+}
+
+/*
+1. Remove the margin in all browsers.
+2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
+*/
+
+body {
+  margin: 0; /* 1 */
+  line-height: inherit; /* 2 */
+}
+
+/*
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+3. Ensure horizontal rules are visible by default.
+*/
+
+hr {
+  height: 0; /* 1 */
+  color: inherit; /* 2 */
+  border-top-width: 1px; /* 3 */
+}
+
+/*
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+
+abbr:where([title]) {
+  text-decoration: underline dotted;
+}
+
+/*
+Remove the default font size and weight for headings.
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*
+Reset links to optimize for opt-in styling instead of opt-out.
+*/
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/*
+Add the correct font weight in Edge and Safari.
+*/
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/*
+1. Use the user's configured `mono` font-family by default.
+2. Use the user's configured `mono` font-feature-settings by default.
+3. Use the user's configured `mono` font-variation-settings by default.
+4. Correct the odd `em` font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; /* 1 */
+  font-feature-settings: normal; /* 2 */
+  font-variation-settings: normal; /* 3 */
+  font-size: 1em; /* 4 */
+}
+
+/*
+Add the correct font size in all browsers.
+*/
+
+small {
+  font-size: 80%;
+}
+
+/*
+Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+*/
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+3. Remove gaps between table borders by default.
+*/
+
+table {
+  text-indent: 0; /* 1 */
+  border-color: inherit; /* 2 */
+  border-collapse: collapse; /* 3 */
+}
+
+/*
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+3. Remove default padding in all browsers.
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-feature-settings: inherit; /* 1 */
+  font-variation-settings: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  font-weight: inherit; /* 1 */
+  line-height: inherit; /* 1 */
+  color: inherit; /* 1 */
+  margin: 0; /* 2 */
+  padding: 0; /* 3 */
+}
+
+/*
+Remove the inheritance of text transform in Edge and Firefox.
+*/
+
+button,
+select {
+  text-transform: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Remove default button styles.
+*/
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  -webkit-appearance: button; /* 1 */
+  background-color: transparent; /* 2 */
+  background-image: none; /* 2 */
+}
+
+/*
+Use the modern Firefox focus style for all focusable elements.
+*/
+
+:-moz-focusring {
+  outline: auto;
+}
+
+/*
+Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
+*/
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/*
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+
+progress {
+  vertical-align: baseline;
+}
+
+/*
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/*
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+
+[type='search'] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/*
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to `inherit` in Safari.
+*/
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/*
+Add the correct display in Chrome and Safari.
+*/
+
+summary {
+  display: list-item;
+}
+
+/*
+Removes the default spacing for appropriate elements.
+*/
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+ol,
+ul,
+menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+dialog {
+  padding: 0;
+}
+
+/*
+Prevent resizing textareas horizontally by default.
+*/
+
+textarea {
+  resize: vertical;
+}
+
+/*
+1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
+2. Set the default placeholder color to the user's configured gray 400 color.
+*/
+
+input::placeholder,
+textarea::placeholder {
+  opacity: 1; /* 1 */
+  color: #9ca3af; /* 2 */
+}
+
+/*
+Set the default cursor for buttons.
+*/
+
+button,
+[role="button"] {
+  cursor: pointer;
+}
+
+/*
+Make sure disabled buttons don't get the pointer cursor.
+*/
+
+:disabled {
+  cursor: default;
+}
+
+/*
+1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
+2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
+   This can trigger a poorly considered lint error in some tools but is included by design.
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block; /* 1 */
+  vertical-align: middle; /* 2 */
+}
+
+/*
+Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
+*/
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/*
+Make elements with the HTML hidden attribute stay hidden by default.
+*/
+
+[hidden]:where(:not([hidden="until-found"])) {
+  display: none;
+}
+</style>
+<style data-vite-dev-id="/__uno.css">/* layer: properties */
+@property --un-outline-style{syntax:"*";inherits:false;initial-value:solid;}
+/* layer: theme */
+:root, :host {
+--font-sans: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+--font-mono: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+--default-font-family: var(--font-sans);
+--default-monoFont-family: var(--font-mono);
+}
+/* layer: base */
+/*
+  1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+  2. Remove default margins and padding
+  3. Reset all borders.
+*/
+
+*,
+::after,
+::before,
+::backdrop,
+::file-selector-button {
+  box-sizing: border-box; /* 1 */
+  margin: 0; /* 2 */
+  padding: 0; /* 2 */
+  border: 0 solid; /* 3 */
+}
+
+/*
+  1. Use a consistent sensible line-height in all browsers.
+  2. Prevent adjustments of font size after orientation changes in iOS.
+  3. Use a more readable tab size.
+  4. Use the user's configured `sans` font-family by default.
+  5. Use the user's configured `sans` font-feature-settings by default.
+  6. Use the user's configured `sans` font-variation-settings by default.
+  7. Disable tap highlights on iOS.
+*/
+
+html,
+:host {
+  line-height: 1.5; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+  tab-size: 4; /* 3 */
+  font-family: var(
+    --default-font-family,
+    ui-sans-serif,
+    system-ui,
+    sans-serif,
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol',
+    'Noto Color Emoji'
+  ); /* 4 */
+  font-feature-settings: var(--default-font-featureSettings, normal); /* 5 */
+  font-variation-settings: var(--default-font-variationSettings, normal); /* 6 */
+  -webkit-tap-highlight-color: transparent; /* 7 */
+}
+
+/*
+  1. Add the correct height in Firefox.
+  2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+  3. Reset the default border style to a 1px solid border.
+*/
+
+hr {
+  height: 0; /* 1 */
+  color: inherit; /* 2 */
+  border-top-width: 1px; /* 3 */
+}
+
+/*
+  Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+
+abbr:where([title]) {
+  -webkit-text-decoration: underline dotted;
+  text-decoration: underline dotted;
+}
+
+/*
+  Remove the default font size and weight for headings.
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*
+  Reset links to optimize for opt-in styling instead of opt-out.
+*/
+
+a {
+  color: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
+}
+
+/*
+  Add the correct font weight in Edge and Safari.
+*/
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/*
+  1. Use the user's configured `mono` font-family by default.
+  2. Use the user's configured `mono` font-feature-settings by default.
+  3. Use the user's configured `mono` font-variation-settings by default.
+  4. Correct the odd `em` font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp,
+pre {
+  font-family: var(
+    --default-monoFont-family,
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    'Liberation Mono',
+    'Courier New',
+    monospace
+  ); /* 1 */
+  font-feature-settings: var(--default-monoFont-featureSettings, normal); /* 2 */
+  font-variation-settings: var(--default-monoFont-variationSettings, normal); /* 3 */
+  font-size: 1em; /* 4 */
+}
+
+/*
+  Add the correct font size in all browsers.
+*/
+
+small {
+  font-size: 80%;
+}
+
+/*
+  Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+*/
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+  1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+  2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+  3. Remove gaps between table borders by default.
+*/
+
+table {
+  text-indent: 0; /* 1 */
+  border-color: inherit; /* 2 */
+  border-collapse: collapse; /* 3 */
+}
+
+/*
+  Use the modern Firefox focus style for all focusable elements.
+*/
+
+:-moz-focusring {
+  outline: auto;
+}
+
+/*
+  Add the correct vertical alignment in Chrome and Firefox.
+*/
+
+progress {
+  vertical-align: baseline;
+}
+
+/*
+  Add the correct display in Chrome and Safari.
+*/
+
+summary {
+  display: list-item;
+}
+
+/*
+  Make lists unstyled by default.
+*/
+
+ol,
+ul,
+menu {
+  list-style: none;
+}
+
+/*
+  1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
+  2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
+      This can trigger a poorly considered lint error in some tools but is included by design.
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block; /* 1 */
+  vertical-align: middle; /* 2 */
+}
+
+/*
+  Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
+*/
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/*
+  1. Inherit font styles in all browsers.
+  2. Remove border radius in all browsers.
+  3. Remove background color in all browsers.
+  4. Ensure consistent opacity for disabled states in all browsers.
+*/
+
+button,
+input,
+select,
+optgroup,
+textarea,
+::file-selector-button {
+  font: inherit; /* 1 */
+  font-feature-settings: inherit; /* 1 */
+  font-variation-settings: inherit; /* 1 */
+  letter-spacing: inherit; /* 1 */
+  color: inherit; /* 1 */
+  border-radius: 0; /* 2 */
+  background-color: transparent; /* 3 */
+  opacity: 1; /* 4 */
+}
+
+/*
+  Restore default font weight.
+*/
+
+:where(select:is([multiple], [size])) optgroup {
+  font-weight: bolder;
+}
+
+/*
+  Restore indentation.
+*/
+
+:where(select:is([multiple], [size])) optgroup option {
+  padding-inline-start: 20px;
+}
+
+/*
+  Restore space after button.
+*/
+
+::file-selector-button {
+  margin-inline-end: 4px;
+}
+
+/*
+  Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
+*/
+
+::placeholder {
+  opacity: 1;
+}
+
+/*
+  Set the default placeholder color to a semi-transparent version of the current text color in browsers that do not
+  crash when using `color-mix(…)` with `currentcolor`. (https://github.com/tailwindlabs/tailwindcss/issues/17194)
+*/
+
+@supports (not (-webkit-appearance: -apple-pay-button)) /* Not Safari */ or
+  (contain-intrinsic-size: 1px) /* Safari 17+ */ {
+  ::placeholder {
+    color: color-mix(in oklab, currentcolor 50%, transparent);
+  }
+}
+
+/*
+  Prevent resizing textareas horizontally by default.
+*/
+
+textarea {
+  resize: vertical;
+}
+
+/*
+  Remove the inner padding in Chrome and Safari on macOS.
+*/
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/*
+  1. Ensure date/time inputs have the same height when empty in iOS Safari.
+  2. Ensure text alignment can be changed on date/time inputs in iOS Safari.
+*/
+
+::-webkit-date-and-time-value {
+  min-height: 1lh; /* 1 */
+  text-align: inherit; /* 2 */
+}
+
+/*
+  Prevent height from changing on date/time inputs in macOS Safari when the input is set to `display: block`.
+*/
+
+::-webkit-datetime-edit {
+  display: inline-flex;
+}
+
+/*
+  Remove excess padding from pseudo-elements in date/time inputs to ensure consistent height across browsers.
+*/
+
+::-webkit-datetime-edit-fields-wrapper {
+  padding: 0;
+}
+
+::-webkit-datetime-edit,
+::-webkit-datetime-edit-year-field,
+::-webkit-datetime-edit-month-field,
+::-webkit-datetime-edit-day-field,
+::-webkit-datetime-edit-hour-field,
+::-webkit-datetime-edit-minute-field,
+::-webkit-datetime-edit-second-field,
+::-webkit-datetime-edit-millisecond-field,
+::-webkit-datetime-edit-meridiem-field {
+  padding-block: 0;
+}
+
+/*
+  Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
+*/
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/*
+  Correct the inability to style the border radius in iOS Safari.
+*/
+
+button,
+input:where([type='button'], [type='reset'], [type='submit']),
+::file-selector-button {
+  appearance: button;
+}
+
+/*
+  Correct the cursor style of increment and decrement buttons in Safari.
+*/
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/*
+  Make elements with the HTML hidden attribute stay hidden by default.
+*/
+
+[hidden]:where(:not([hidden='until-found'])) {
+  display: none !important;
+}
+/* layer: default */
+.outline{outline-style:var(--un-outline-style);outline-width:1px;}
+.flex{display:flex;}__uno_hash_5bff2c{--:'';}</style><script type="module" src="/@vite/client"></script>
+<script type="module" src="/@fs/C:/Users/zerodi/Documents/workspace/GamBlick/node_modules/astro/dist/runtime/client/dev-toolbar/entrypoint.js?v=d3c44500"></script>
+<script>window.__astro_dev_toolbar__ = {"root":"C:\\Users\\zerodi\\Documents\\workspace\\GamBlick\\","version":"5.11.2","debugInfo":"Astro                    v5.11.2\nNode                     v22.17.0\nSystem                   Windows (x64)\nPackage Manager          bun\nOutput                   static\nAdapter                  none\nIntegrations             unocss\n                         @astrojs/svelte"}</script>
+<script type="module" src="/node_modules/@unocss/reset/tailwind.css"></script>
+<script type="module" src="/__uno.css"></script><style type="text/css" data-vite-dev-id="C:/Users/zerodi/Documents/workspace/GamBlick/__uno.css">/* layer: properties */
+@property --un-outline-style{syntax:"*";inherits:false;initial-value:solid;}
+/* layer: theme */
+:root, :host {
+--font-sans: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+--font-mono: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+--default-font-family: var(--font-sans);
+--default-monoFont-family: var(--font-mono);
+}
+/* layer: base */
+/*
+  1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+  2. Remove default margins and padding
+  3. Reset all borders.
+*/
+
+*,
+::after,
+::before,
+::backdrop,
+::file-selector-button {
+  box-sizing: border-box; /* 1 */
+  margin: 0; /* 2 */
+  padding: 0; /* 2 */
+  border: 0 solid; /* 3 */
+}
+
+/*
+  1. Use a consistent sensible line-height in all browsers.
+  2. Prevent adjustments of font size after orientation changes in iOS.
+  3. Use a more readable tab size.
+  4. Use the user's configured `sans` font-family by default.
+  5. Use the user's configured `sans` font-feature-settings by default.
+  6. Use the user's configured `sans` font-variation-settings by default.
+  7. Disable tap highlights on iOS.
+*/
+
+html,
+:host {
+  line-height: 1.5; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+  tab-size: 4; /* 3 */
+  font-family: var(
+    --default-font-family,
+    ui-sans-serif,
+    system-ui,
+    sans-serif,
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol',
+    'Noto Color Emoji'
+  ); /* 4 */
+  font-feature-settings: var(--default-font-featureSettings, normal); /* 5 */
+  font-variation-settings: var(--default-font-variationSettings, normal); /* 6 */
+  -webkit-tap-highlight-color: transparent; /* 7 */
+}
+
+/*
+  1. Add the correct height in Firefox.
+  2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+  3. Reset the default border style to a 1px solid border.
+*/
+
+hr {
+  height: 0; /* 1 */
+  color: inherit; /* 2 */
+  border-top-width: 1px; /* 3 */
+}
+
+/*
+  Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+
+abbr:where([title]) {
+  -webkit-text-decoration: underline dotted;
+  text-decoration: underline dotted;
+}
+
+/*
+  Remove the default font size and weight for headings.
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*
+  Reset links to optimize for opt-in styling instead of opt-out.
+*/
+
+a {
+  color: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
+}
+
+/*
+  Add the correct font weight in Edge and Safari.
+*/
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/*
+  1. Use the user's configured `mono` font-family by default.
+  2. Use the user's configured `mono` font-feature-settings by default.
+  3. Use the user's configured `mono` font-variation-settings by default.
+  4. Correct the odd `em` font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp,
+pre {
+  font-family: var(
+    --default-monoFont-family,
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    'Liberation Mono',
+    'Courier New',
+    monospace
+  ); /* 1 */
+  font-feature-settings: var(--default-monoFont-featureSettings, normal); /* 2 */
+  font-variation-settings: var(--default-monoFont-variationSettings, normal); /* 3 */
+  font-size: 1em; /* 4 */
+}
+
+/*
+  Add the correct font size in all browsers.
+*/
+
+small {
+  font-size: 80%;
+}
+
+/*
+  Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+*/
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+  1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+  2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+  3. Remove gaps between table borders by default.
+*/
+
+table {
+  text-indent: 0; /* 1 */
+  border-color: inherit; /* 2 */
+  border-collapse: collapse; /* 3 */
+}
+
+/*
+  Use the modern Firefox focus style for all focusable elements.
+*/
+
+:-moz-focusring {
+  outline: auto;
+}
+
+/*
+  Add the correct vertical alignment in Chrome and Firefox.
+*/
+
+progress {
+  vertical-align: baseline;
+}
+
+/*
+  Add the correct display in Chrome and Safari.
+*/
+
+summary {
+  display: list-item;
+}
+
+/*
+  Make lists unstyled by default.
+*/
+
+ol,
+ul,
+menu {
+  list-style: none;
+}
+
+/*
+  1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
+  2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
+      This can trigger a poorly considered lint error in some tools but is included by design.
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block; /* 1 */
+  vertical-align: middle; /* 2 */
+}
+
+/*
+  Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
+*/
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/*
+  1. Inherit font styles in all browsers.
+  2. Remove border radius in all browsers.
+  3. Remove background color in all browsers.
+  4. Ensure consistent opacity for disabled states in all browsers.
+*/
+
+button,
+input,
+select,
+optgroup,
+textarea,
+::file-selector-button {
+  font: inherit; /* 1 */
+  font-feature-settings: inherit; /* 1 */
+  font-variation-settings: inherit; /* 1 */
+  letter-spacing: inherit; /* 1 */
+  color: inherit; /* 1 */
+  border-radius: 0; /* 2 */
+  background-color: transparent; /* 3 */
+  opacity: 1; /* 4 */
+}
+
+/*
+  Restore default font weight.
+*/
+
+:where(select:is([multiple], [size])) optgroup {
+  font-weight: bolder;
+}
+
+/*
+  Restore indentation.
+*/
+
+:where(select:is([multiple], [size])) optgroup option {
+  padding-inline-start: 20px;
+}
+
+/*
+  Restore space after button.
+*/
+
+::file-selector-button {
+  margin-inline-end: 4px;
+}
+
+/*
+  Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
+*/
+
+::placeholder {
+  opacity: 1;
+}
+
+/*
+  Set the default placeholder color to a semi-transparent version of the current text color in browsers that do not
+  crash when using `color-mix(…)` with `currentcolor`. (https://github.com/tailwindlabs/tailwindcss/issues/17194)
+*/
+
+@supports (not (-webkit-appearance: -apple-pay-button)) /* Not Safari */ or
+  (contain-intrinsic-size: 1px) /* Safari 17+ */ {
+  ::placeholder {
+    color: color-mix(in oklab, currentcolor 50%, transparent);
+  }
+}
+
+/*
+  Prevent resizing textareas horizontally by default.
+*/
+
+textarea {
+  resize: vertical;
+}
+
+/*
+  Remove the inner padding in Chrome and Safari on macOS.
+*/
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/*
+  1. Ensure date/time inputs have the same height when empty in iOS Safari.
+  2. Ensure text alignment can be changed on date/time inputs in iOS Safari.
+*/
+
+::-webkit-date-and-time-value {
+  min-height: 1lh; /* 1 */
+  text-align: inherit; /* 2 */
+}
+
+/*
+  Prevent height from changing on date/time inputs in macOS Safari when the input is set to `display: block`.
+*/
+
+::-webkit-datetime-edit {
+  display: inline-flex;
+}
+
+/*
+  Remove excess padding from pseudo-elements in date/time inputs to ensure consistent height across browsers.
+*/
+
+::-webkit-datetime-edit-fields-wrapper {
+  padding: 0;
+}
+
+::-webkit-datetime-edit,
+::-webkit-datetime-edit-year-field,
+::-webkit-datetime-edit-month-field,
+::-webkit-datetime-edit-day-field,
+::-webkit-datetime-edit-hour-field,
+::-webkit-datetime-edit-minute-field,
+::-webkit-datetime-edit-second-field,
+::-webkit-datetime-edit-millisecond-field,
+::-webkit-datetime-edit-meridiem-field {
+  padding-block: 0;
+}
+
+/*
+  Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
+*/
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/*
+  Correct the inability to style the border radius in iOS Safari.
+*/
+
+button,
+input:where([type='button'], [type='reset'], [type='submit']),
+::file-selector-button {
+  appearance: button;
+}
+
+/*
+  Correct the cursor style of increment and decrement buttons in Safari.
+*/
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/*
+  Make elements with the HTML hidden attribute stay hidden by default.
+*/
+
+[hidden]:where(:not([hidden='until-found'])) {
+  display: none !important;
+}
+/* layer: default */
+.outline{outline-style:var(--un-outline-style);outline-width:1px;}
+.flex{display:flex;}__uno_hash_5bff2c{--:'';}</style><style>._button_10caf_25{border-radius:8px;border:unset;cursor:pointer;transition:.3s}._button_10caf_25:disabled{opacity:.3;cursor:not-allowed}._button_default_10caf_35{background:transparent;color:#43434e}._button_default_10caf_35:hover{background:#f3f4f7}._button_default_10caf_35:active{background:#8e8e8e}._button_default_10caf_35 ._svg_10caf_45 *{fill:#43434e}._button_primary_10caf_48{background:#007eff;color:#fff}._button_primary_10caf_48:hover{background:#3398ff}._button_primary_10caf_48:active{background:#66b2ff}._button_primary_10caf_48 ._svg_10caf_45 *{fill:#fff}._button_link_10caf_61{background:transparent;color:#007eff}._button_link_10caf_61:hover{color:#3398ff}._button_link_10caf_61:active{color:#66b2ff}._button_link_10caf_61 ._svg_10caf_45 *{fill:#007eff}._button_link_10caf_61 ._svg_10caf_45 *:hover{fill:#3398ff}._button_link_10caf_61 ._svg_10caf_45 *:active{fill:#66b2ff}._button_large_10caf_80{padding:12px 16px}._button_large_10caf_80 *{font-size:16px}._button_medium_10caf_86{padding:8px 16px}._button_medium_10caf_86 *{font-size:16px}._button_small_10caf_92{padding:4px;min-height:24px}._button_small_10caf_92 *{font-size:12px}._flexBox_9xdww_14{flex-flow:unset}._gap_extraTiny_9xdww_18{gap:2px}._gap_tiny_9xdww_22{gap:4px}._gap_extraSmall_9xdww_26{gap:6px}._gap_small_9xdww_30{gap:8px}._gap_medium_9xdww_34{gap:16px}._gap_normal_9xdww_38{gap:24px}._gap_large_9xdww_42{gap:32px}._gap_xLarge_9xdww_46{gap:48px}._gap_xxLarge_9xdww_50{gap:56px}._gap_extraLarge_9xdww_54{gap:64px}._column_9xdww_58{flex-direction:column!important}._flexWrap_9xdww_62{flex-wrap:wrap}._popover_12uvb_1{position:fixed;padding:8px 10px;z-index:2147483647;background:#31363de6;border-radius:4px;color:#fff;font-size:14px}._buttons_12uvb_11{position:fixed;top:0;right:0;padding:8px;z-index:2147483647}._popup_hcu7e_1{position:fixed;z-index:2147483649;background:#ffffffe6;border-radius:4px;color:#000;font-size:14px;line-height:1.286;width:350px;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);box-shadow:0 0 7px -5px #000}._popup_hcu7e_1:before{border-color:rgba(255,255,255,.9) transparent;border-width:0 7px 7px 7px;left:7px;top:-7px;border-style:solid;content:".";display:block;height:0;position:absolute;text-indent:-30000px;width:0}._color_hcu7e_27{width:20px;height:20px;cursor:pointer;flex-shrink:0}._styleContainer_hcu7e_34{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}._extraTiny_dg7lc_14{padding:2px}._extraTinyVR_dg7lc_18{padding-top:2px;padding-bottom:2px}._extraTinyHR_dg7lc_23{padding-left:2px;padding-right:2px}._extraTinyTop_dg7lc_28{padding-top:2px}._extraTinyRight_dg7lc_32{padding-right:2px}._extraTinyBottom_dg7lc_36{padding-bottom:2px}._extraTinyLeft_dg7lc_40{padding-left:2px}._tiny_dg7lc_44{padding:4px}._tinyVR_dg7lc_48{padding-top:4px;padding-bottom:4px}._tinyHR_dg7lc_53{padding-left:4px;padding-right:4px}._tinyTop_dg7lc_58{padding-top:4px}._tinyRight_dg7lc_62{padding-right:4px}._tinyBottom_dg7lc_66{padding-bottom:4px}._tinyLeft_dg7lc_70{padding-left:4px}._extraSmall_dg7lc_74{padding:6px}._extraSmallVR_dg7lc_78{padding-top:6px;padding-bottom:6px}._extraSmallHR_dg7lc_83{padding-left:6px;padding-right:6px}._extraSmallTop_dg7lc_88{padding-top:6px}._extraSmallRight_dg7lc_92{padding-right:6px}._extraSmallBottom_dg7lc_96{padding-bottom:6px}._extraSmallLeft_dg7lc_100{padding-left:6px}._small_dg7lc_104{padding:8px}._smallVR_dg7lc_108{padding-top:8px;padding-bottom:8px}._smallHR_dg7lc_113{padding-left:8px;padding-right:8px}._smallTop_dg7lc_118{padding-top:8px}._smallRight_dg7lc_122{padding-right:8px}._smallBottom_dg7lc_126{padding-bottom:8px}._smallLeft_dg7lc_130{padding-left:8px}._medium_dg7lc_134{padding:16px}._mediumVR_dg7lc_138{padding-top:16px;padding-bottom:16px}._mediumHR_dg7lc_143{padding-left:16px;padding-right:16px}._mediumTop_dg7lc_148{padding-top:16px}._mediumRight_dg7lc_152{padding-right:16px}._mediumBottom_dg7lc_156{padding-bottom:16px}._mediumLeft_dg7lc_160{padding-left:16px}._normal_dg7lc_164{padding:24px}._normalVR_dg7lc_168{padding-top:24px;padding-bottom:24px}._normalHR_dg7lc_173{padding-left:24px;padding-right:24px}._normalTop_dg7lc_178{padding-top:24px}._normalRight_dg7lc_182{padding-right:24px}._normalBottom_dg7lc_186{padding-bottom:24px}._normalLeft_dg7lc_190{padding-left:24px}._large_dg7lc_194{padding:32px}._largeVR_dg7lc_198{padding-top:32px;padding-bottom:32px}._largeHR_dg7lc_203{padding-left:32px;padding-right:32px}._largeTop_dg7lc_208{padding-top:32px}._largeRight_dg7lc_212{padding-right:32px}._largeBottom_dg7lc_216{padding-bottom:32px}._largeLeft_dg7lc_220{padding-left:32px}._xLarge_dg7lc_224{padding:48px}._xLargeVR_dg7lc_228{padding-top:48px;padding-bottom:48px}._xLargeHR_dg7lc_233{padding-left:48px;padding-right:48px}._xLargeTop_dg7lc_238{padding-top:48px}._xLargeRight_dg7lc_242{padding-right:48px}._xLargeBottom_dg7lc_246{padding-bottom:48px}._xLargeLeft_dg7lc_250{padding-left:48px}._xxLarge_dg7lc_254{padding:56px}._xxLargeVR_dg7lc_258{padding-top:56px;padding-bottom:56px}._xxLargeHR_dg7lc_263{padding-left:56px;padding-right:56px}._xxLargeTop_dg7lc_268{padding-top:56px}._xxLargeRight_dg7lc_272{padding-right:56px}._xxLargeBottom_dg7lc_276{padding-bottom:56px}._xxLargeLeft_dg7lc_280{padding-left:56px}._extraLarge_dg7lc_284{padding:64px}._extraLargeVR_dg7lc_288{padding-top:64px;padding-bottom:64px}._extraLargeHR_dg7lc_293{padding-left:64px;padding-right:64px}._extraLargeTop_dg7lc_298{padding-top:64px}._extraLargeRight_dg7lc_302{padding-right:64px}._extraLargeBottom_dg7lc_306{padding-bottom:64px}._extraLargeLeft_dg7lc_310{padding-left:64px}._size_tiny_ldink_23,._size_tiny_ldink_23 *{font-size:12px}._size_small_ldink_27,._size_small_ldink_27 *{font-size:16px}._size_medium_ldink_31,._size_medium_ldink_31 *{font-size:18px}._size_large_ldink_35,._size_large_ldink_35 *{font-size:32px}._weight_thin_ldink_39,._weight_thin_ldink_39 *{font-weight:100}._weight_extraLight_ldink_43,._weight_extraLight_ldink_43 *{font-weight:200}._weight_light_ldink_47,._weight_light_ldink_47 *{font-weight:300}._weight_normal_ldink_51,._weight_normal_ldink_51 *{font-weight:400}._weight_medium_ldink_55,._weight_medium_ldink_55 *{font-weight:500}._weight_semiBold_ldink_59,._weight_semiBold_ldink_59 *{font-weight:600}._weight_bold_ldink_63,._weight_bold_ldink_63 *{font-weight:700}._weight_extraBold_ldink_67,._weight_extraBold_ldink_67 *{font-weight:800}._lineHeight_ldink_71{line-height:100%}._secondary_ldink_75{color:#8e8e8e}._modal_ib2ay_25{position:fixed;top:0;left:0;width:100%;height:100%;display:flex;justify-content:center;align-items:center;z-index:2147483649}._modal_ib2ay_25 ._background_ib2ay_36{position:absolute;top:0;left:0;width:100%;height:100%;transition:.3s;opacity:0;overflow:auto;background-color:color-mix(in srgb,#000000 60%,white 0%);-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}._modal_ib2ay_25 ._window_ib2ay_48{min-width:280px;max-width:560px;background:#fff;border-radius:6px;padding:16px;z-index:1;position:relative;opacity:0;transform:scale(.01);transition:.3s;display:flex;flex-direction:column;box-shadow:0 2px 6px 2px #00000026,0 1px 2px #0000004d;overflow:auto}._modal_ib2ay_25 ._window_ib2ay_48 ._loading_ib2ay_64{position:absolute;width:100%;height:100%;top:0;left:0;background:#000000b3}._modal_ib2ay_25 ._window_ib2ay_48 ._loading_ib2ay_64 img{width:100px}._modal_visible_ib2ay_76 ._background_ib2ay_36{opacity:1}._modal_visible_ib2ay_76 ._window_ib2ay_48{opacity:1;transform:scale(1)}._modal_hidden_ib2ay_83 ._background_ib2ay_36{opacity:0}._modal_hidden_ib2ay_83 ._window_ib2ay_48{opacity:0;transform:scale(.01)}._modal_hiddenDone_ib2ay_90 ._background_ib2ay_36{opacity:0}._modal_hiddenDone_ib2ay_90 ._window_ib2ay_48{opacity:0;transform:scale(.01)}._color_13dyv_1{padding:0 8px;border-radius:8px;width:100%;box-shadow:0 0 7px -5px #000;font-weight:800;flex-shrink:0}
+</style></head> <body>  <main> <h1>Welcome to GamBlick!</h1> <div style="display: flex; flex-direction: column; gap: 10px;"> <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();</script><script>(()=>{var A=Object.defineProperty;var g=(i,o,a)=>o in i?A(i,o,{enumerable:!0,configurable:!0,writable:!0,value:a}):i[o]=a;var l=(i,o,a)=>g(i,typeof o!="symbol"?o+"":o,a);{let i={0:t=>y(t),1:t=>a(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(a(t)),5:t=>new Set(a(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>1/0*t},o=t=>{let[h,e]=t;return h in i?i[h](e):void 0},a=t=>t.map(o),y=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([h,e])=>[h,o(e)]));class f extends HTMLElement{constructor(){super(...arguments);l(this,"Component");l(this,"hydrator");l(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let c=this.querySelectorAll("astro-slot"),n={},p=this.querySelectorAll("template[data-astro-template]");for(let r of p){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(let r of c){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("name")||"default"]=r.innerHTML)}let u;try{u=this.hasAttribute("props")?y(JSON.parse(this.getAttribute("props"))):{}}catch(r){let s=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(s+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${s}`,this.getAttribute("props"),r),r}let d,m=this.hydrator(this);d=performance.now(),await m(this.Component,u,n,{client:this.getAttribute("client")}),d&&this.setAttribute("client-render-time",(performance.now()-d).toString()),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});l(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),c.disconnect(),this.childrenConnectedCallback()},c=new MutationObserver(()=>{var n;((n=this.lastChild)==null?void 0:n.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});c.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}async start(){let e=JSON.parse(this.getAttribute("opts")),c=this.getAttribute("client");if(Astro[c]===void 0){window.addEventListener(`astro:${c}`,()=>this.start(),{once:!0});return}try{await Astro[c](async()=>{let n=this.getAttribute("renderer-url"),[p,{default:u}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),d=this.getAttribute("component-export")||"default";if(!d.includes("."))this.Component=p[d];else{this.Component=p;for(let m of d.split("."))this.Component=this.Component[m]}return this.hydrator=u,this.hydrate},e,this)}catch(n){console.error(`[astro-island] Error hydrating ${this.getAttribute("component-url")}`,n)}}attributeChangedCallback(){this.hydrate()}}l(f,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",f)}})();</script><astro-island uid="Xt23b" component-url="/src/components/Button.svelte" component-export="default" renderer-url="/node_modules/.vite/deps/@astrojs_svelte_client__js.js?v=d3c44500" props="{&quot;variant&quot;:[0,&quot;default&quot;]}" client="load" before-hydration-url="/@id/astro:scripts/before-hydration.js" opts="{&quot;name&quot;:&quot;Button&quot;,&quot;value&quot;:true}" server-render-time="16.20550000000003" await-children="" client-render-time="0.2999999523162842"><!--[--><button class="inline-flex items-center justify-center whitespace-nowrap rounded-lg text-sm font-semibold ring-offset-background transition-all duration-200 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-blue-600 text-white shadow-md hover:bg-blue-700 active:bg-blue-800 h-10 px-5 py-2"><!----><astro-slot>Default Button</astro-slot><!----> 4</button><!--]--></astro-island> <astro-island uid="ZbfIBu" component-url="/src/components/Button.svelte" component-export="default" renderer-url="/node_modules/.vite/deps/@astrojs_svelte_client__js.js?v=d3c44500" props="{&quot;variant&quot;:[0,&quot;destructive&quot;]}" client="load" before-hydration-url="/@id/astro:scripts/before-hydration.js" opts="{&quot;name&quot;:&quot;Button&quot;,&quot;value&quot;:true}" server-render-time="3.7791000000006534" await-children="" client-render-time="0.7999999523162842"><!--[--><button class="inline-flex items-center justify-center whitespace-nowrap rounded-lg text-sm font-semibold ring-offset-background transition-all duration-200 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-red-600 text-white shadow-md hover:bg-red-700 active:bg-red-800 h-10 px-5 py-2"><!----><astro-slot>Destructive Button</astro-slot><!----> 3</button><!--]--></astro-island> <astro-island uid="pyb2y" component-url="/src/components/Button.svelte" component-export="default" renderer-url="/node_modules/.vite/deps/@astrojs_svelte_client__js.js?v=d3c44500" props="{&quot;variant&quot;:[0,&quot;outline&quot;]}" client="load" before-hydration-url="/@id/astro:scripts/before-hydration.js" opts="{&quot;name&quot;:&quot;Button&quot;,&quot;value&quot;:true}" server-render-time="3.513300000000527" await-children="" client-render-time="0.6000000238418579"><!--[--><button class="inline-flex items-center justify-center whitespace-nowrap rounded-lg text-sm font-semibold ring-offset-background transition-all duration-200 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-gray-300 bg-white text-gray-800 shadow-sm hover:bg-gray-100 active:bg-gray-200 h-10 px-5 py-2"><!----><astro-slot>Outline Button</astro-slot><!----> 0</button><!--]--></astro-island> <astro-island uid="Zh1HJ7" component-url="/src/components/Button.svelte" component-export="default" renderer-url="/node_modules/.vite/deps/@astrojs_svelte_client__js.js?v=d3c44500" props="{&quot;variant&quot;:[0,&quot;secondary&quot;]}" client="load" before-hydration-url="/@id/astro:scripts/before-hydration.js" opts="{&quot;name&quot;:&quot;Button&quot;,&quot;value&quot;:true}" server-render-time="3.2714999999998327" await-children="" client-render-time="0.7000000476837158"><!--[--><button class="inline-flex items-center justify-center whitespace-nowrap rounded-lg text-sm font-semibold ring-offset-background transition-all duration-200 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-gray-200 text-gray-800 shadow-sm hover:bg-gray-300 active:bg-gray-400 h-10 px-5 py-2"><!----><astro-slot>Secondary Button</astro-slot><!----> 0</button><!--]--></astro-island> <astro-island uid="Z1eSHIC" component-url="/src/components/Button.svelte" component-export="default" renderer-url="/node_modules/.vite/deps/@astrojs_svelte_client__js.js?v=d3c44500" props="{&quot;variant&quot;:[0,&quot;ghost&quot;]}" client="load" before-hydration-url="/@id/astro:scripts/before-hydration.js" opts="{&quot;name&quot;:&quot;Button&quot;,&quot;value&quot;:true}" server-render-time="3.125500000000102" await-children="" client-render-time="0.3999999761581421"><!--[--><button class="inline-flex items-center justify-center whitespace-nowrap rounded-lg text-sm font-semibold ring-offset-background transition-all duration-200 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-gray-100 active:bg-gray-200 h-10 px-5 py-2"><!----><astro-slot>Ghost Button</astro-slot><!----> 0</button><!--]--></astro-island> <astro-island uid="ZqiloE" component-url="/src/components/Button.svelte" component-export="default" renderer-url="/node_modules/.vite/deps/@astrojs_svelte_client__js.js?v=d3c44500" props="{&quot;variant&quot;:[0,&quot;link&quot;]}" client="load" before-hydration-url="/@id/astro:scripts/before-hydration.js" opts="{&quot;name&quot;:&quot;Button&quot;,&quot;value&quot;:true}" server-render-time="2.8784999999998035" await-children="" client-render-time="0.5"><!--[--><button class="inline-flex items-center justify-center whitespace-nowrap rounded-lg text-sm font-semibold ring-offset-background transition-all duration-200 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-blue-600 underline-offset-4 hover:underline h-10 px-5 py-2"><!----><astro-slot>Link Button</astro-slot><!----> 0</button><!--]--></astro-island> <astro-island uid="iknwn" component-url="/src/components/Button.svelte" component-export="default" renderer-url="/node_modules/.vite/deps/@astrojs_svelte_client__js.js?v=d3c44500" props="{&quot;size&quot;:[0,&quot;sm&quot;]}" client="load" before-hydration-url="/@id/astro:scripts/before-hydration.js" opts="{&quot;name&quot;:&quot;Button&quot;,&quot;value&quot;:true}" server-render-time="2.6674999999995634" await-children="" client-render-time="17.59999990463257"><!--[--><button class="inline-flex items-center justify-center whitespace-nowrap text-sm font-semibold ring-offset-background transition-all duration-200 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-blue-600 text-white shadow-md hover:bg-blue-700 active:bg-blue-800 h-9 rounded-md px-4"><!----><astro-slot>Small Button</astro-slot><!----> 0</button><!--]--></astro-island> <astro-island uid="ZQdxUa" component-url="/src/components/Button.svelte" component-export="default" renderer-url="/node_modules/.vite/deps/@astrojs_svelte_client__js.js?v=d3c44500" props="{&quot;size&quot;:[0,&quot;lg&quot;]}" client="load" before-hydration-url="/@id/astro:scripts/before-hydration.js" opts="{&quot;name&quot;:&quot;Button&quot;,&quot;value&quot;:true}" server-render-time="2.5033999999996013" await-children="" client-render-time="0.5"><!--[--><button class="inline-flex items-center justify-center whitespace-nowrap font-semibold ring-offset-background transition-all duration-200 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-blue-600 text-white shadow-md hover:bg-blue-700 active:bg-blue-800 h-12 rounded-lg px-8 text-base"><!----><astro-slot>Large Button</astro-slot><!----> 0</button><!--]--></astro-island> <astro-island uid="ZSPvxw" component-url="/src/components/Button.svelte" component-export="default" renderer-url="/node_modules/.vite/deps/@astrojs_svelte_client__js.js?v=d3c44500" props="{&quot;size&quot;:[0,&quot;icon&quot;]}" client="load" before-hydration-url="/@id/astro:scripts/before-hydration.js" opts="{&quot;name&quot;:&quot;Button&quot;,&quot;value&quot;:true}" server-render-time="2.3809999999994034" await-children="" client-render-time="0.3999999761581421"><!--[--><button class="inline-flex items-center justify-center whitespace-nowrap rounded-lg text-sm font-semibold ring-offset-background transition-all duration-200 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-blue-600 text-white shadow-md hover:bg-blue-700 active:bg-blue-800 h-10 w-10"><!----><astro-slot>Icon Button</astro-slot><!----> 0</button><!--]--></astro-island> </div> <div style="margin-top: 20px;"> <h2>Counter Button:</h2> <astro-island uid="tX58q" component-url="/src/components/Button.svelte" component-export="default" renderer-url="/node_modules/.vite/deps/@astrojs_svelte_client__js.js?v=d3c44500" props="{}" client="load" before-hydration-url="/@id/astro:scripts/before-hydration.js" opts="{&quot;name&quot;:&quot;Button&quot;,&quot;value&quot;:true}" server-render-time="2.0738000000001193" await-children="" client-render-time="1.100000023841858"><!--[--><button class="inline-flex items-center justify-center whitespace-nowrap rounded-lg text-sm font-semibold ring-offset-background transition-all duration-200 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-blue-600 text-white shadow-md hover:bg-blue-700 active:bg-blue-800 h-10 px-5 py-2"><!----><astro-slot>Click to count:</astro-slot><!----> 3</button><!--]--></astro-island> </div> </main>  <astro-dev-toolbar></astro-dev-toolbar></body><div></div></html>

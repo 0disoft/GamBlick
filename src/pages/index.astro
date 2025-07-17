@@ -1,30 +1,25 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/Button.svelte';
 ---
 
-<BaseLayout>
-  <div class="flex min-h-screen flex-col items-center justify-center gap-4">
-    <h1 class="animate-bounce text-5xl font-bold text-green-500">GamBlick</h1>
-    <p class="mt-4 text-xl">Simple Web Game Collection</p>
-
-    <button
-      id="test-button"
-      class="inline-flex h-11 items-center justify-center whitespace-nowrap rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground ring-offset-background transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
-    >
-      Plain HTML Button
-    </button>
-  </div>
+<BaseLayout title="Welcome to GamBlick">
+  <main>
+    <h1>Welcome to GamBlick!</h1>
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <Button client:load variant="default">Default Button</Button>
+      <Button client:load variant="destructive">Destructive Button</Button>
+      <Button client:load variant="outline">Outline Button</Button>
+      <Button client:load variant="secondary">Secondary Button</Button>
+      <Button client:load variant="ghost">Ghost Button</Button>
+      <Button client:load variant="link">Link Button</Button>
+      <Button client:load size="sm">Small Button</Button>
+      <Button client:load size="lg">Large Button</Button>
+      <Button client:load size="icon">Icon Button</Button>
+    </div>
+    <div style="margin-top: 20px;">
+      <h2>Counter Button:</h2>
+      <Button client:load>Click to count:</Button>
+    </div>
+  </main>
 </BaseLayout>
-
-<script>
-  const button = document.getElementById("test-button");
-
-  // button이 null이 아닐 경우에만 이벤트 리스너를 추가합니다.
-  if (button) {
-    button.addEventListener("click", () => {
-      alert("Plain JavaScript Click Works!");
-    });
-  }
-
-  console.log("Astro page script loaded and event listener attached.");
-</script>
