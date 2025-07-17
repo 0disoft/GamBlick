@@ -36,7 +36,7 @@
 * 핵심 기능 라이브러리/서비스:
   * UI 프레임워크: Svelte (UI 컴포넌트 제작 시 활용).
         **주의**: Astro의 현재 Svelte 통합 기능(@astrojs/svelte)에서 최신 UI 라이브러리 사용 시 **하이드레이션(Hydration) 문제가 확인됨.** 따라서 상호작용이 필요한 컴포넌트는 **외부 라이브러리 의존성을 최소화**하고, 순수 Svelte 또는 일반 스크립트로 구현하는 것을 우선한다.
-* 스타일링 툴: UnoCSS, **class-variance-authority (cva) (컴포넌트 스타일 변형 관리)**
+* 스타일링 툴: UnoCSS, class-variance-authority (cva) (컴포넌트 스타일 변형 관리)
 * 백엔드: 프론트엔드(Astro)에 내장된 API Routes (서버리스 함수 형태)
   * 핵심 기능 라이브러리/서비스:
     * 인증: 자체 구현 또는 간소화된 OAuth (예: Google Auth)
